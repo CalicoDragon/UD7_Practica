@@ -8,7 +8,14 @@ const checkIcon = `<svg xmlns="http://www.w3.org/2000/svg" class="icon" height="
 const removeIcon = `<svg xmlns="http://www.w3.org/2000/svg" class="icon" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>`;
 // SVG ICONS FOR HTML INJECTION //
 
-let resourcesArray = [];
+let resourcesArray = [
+  {
+    text: "Example",
+    type: "software",
+    priority: "low",
+    checked: false,
+  },
+];
 
 const resourcesContainer = document.getElementById("resourcesContainer");
 
