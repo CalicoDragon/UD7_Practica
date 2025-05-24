@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Práctica UD7 Sofía</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <aside id="sidebar">
+      <ul id="resourcesContainer">
+        <li class="resource">
+          <div class="resInfo">
+            <span>Resource Example</span
+            ><svg
+              class="icon"
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#1f1f1f"
+            >
+              <path
+                d="M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z"
+              /></svg
+            ><svg
+              class="icon"
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#1f1f1f"
+            >
+              <path
+                d="m136-240-56-56 296-298 160 160 208-206H640v-80h240v240h-80v-104L536-320 376-480 136-240Z"
+              />
+            </svg>
+          </div>
+          <div class="resActions">
+            <svg
+              class="icon"
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#1f1f1f"
+            >
+              <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+            </svg>
+            <button type="button" class="removeButton">
+              <svg
+                class="icon"
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#1f1f1f"
+              >
+                <path
+                  d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+                />
+              </svg>
+            </button>
+          </div>
+        </li>
+      </ul>
+    </aside>
+    <main>
+      <div class="formBox" id="formBox">
+        <form onsubmit="addResource(event)">
+          <input
+            type="text"
+            name="resName"
+            id="fname"
+            placeholder="Resource Name"
+          />
+
+          <div>
+            <input
+              type="radio"
+              name="ware"
+              id="hardware"
+              class="radioInput"
+              value="hardware"
+            />
+            <label for="hardware" id="hardwareLabel">HARDWARE</label>
+            <input
+              type="radio"
+              name="ware"
+              id="software"
+              class="radioInput"
+              value="software"
+            />
+            <label for="software" id="softwareLabel">SOFTWARE</label>
+          </div>
+
+          <div>
+            <input
+              type="radio"
+              name="priority"
+              id="highPrio"
+              class="radioInput"
+              value="high"
+            />
+            <label for="highPrio" id="highLabel">HIGH</label>
+            <input
+              type="radio"
+              name="priority"
+              id="mediumPrio"
+              class="radioInput"
+              value="medium"
+            />
+            <label for="mediumPrio" id="mediumLabel">MEDIUM</label>
+            <input
+              type="radio"
+              name="priority"
+              id="lowPrio"
+              class="radioInput"
+              value="low"
+            />
+            <label for="lowPrio" id="lowLabel">LOW</label>
+          </div>
+
+          <input type="submit" id="add" value="ADD" style="grid-area: add" />
+        </form>
+      </div>
+    </main>
+    <button type="button" class="phoneButton" id="phoneBtn">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="56px"
+        viewBox="0 -960 960 960"
+        width="56px"
+        fill="#1f1f1f"
+      >
+        <path
+          d="M204-318q-22-38-33-78t-11-82q0-134 93-228t227-94h7l-64-64 56-56 160 160-160 160-56-56 64-64h-7q-100 0-170 70.5T240-478q0 26 6 51t18 49l-60 60ZM481-40 321-200l160-160 56 56-64 64h7q100 0 170-70.5T720-482q0-26-6-51t-18-49l60-60q22 38 33 78t11 82q0 134-93 228t-227 94h-7l64 64-56 56Z"
+        />
+      </svg>
+    </button>
+  </body>
+</html>

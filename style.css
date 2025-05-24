@@ -1,0 +1,207 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-clr: #cce3de;
+  --box-clr: white;
+  --accent-clr: #ffcad4;
+  --strongAccent-clr: #f4acb7;
+}
+
+html {
+  font-family: Roboto, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5rem;
+  font-size: medium;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: "main sidebar";
+  place-items: center;
+  background-color: var(--bg-clr);
+}
+
+aside {
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--box-clr);
+  height: 100vh;
+  width: 400px;
+  box-shadow: -5px 0px 10px -10px;
+
+  ul {
+    list-style: none;
+  }
+}
+
+.resource,
+.checkedResource {
+  display: flex;
+  flex-direction: row;
+  padding: 1em;
+  border-bottom: 1px solid rgb(197, 197, 197);
+}
+
+.checkedResource {
+  background-color: rgb(101, 201, 179);
+}
+
+.icon {
+  margin-left: 0.25em;
+  position: relative;
+  top: 5px;
+}
+
+.removeButton,
+.checkButton {
+  border: none;
+  cursor: pointer;
+  background: none;
+  svg {
+    transition-duration: 0.2s;
+  }
+}
+
+.removeButton:hover,
+.checkButton:hover {
+  svg {
+    filter: invert(78%) sepia(12%) saturate(790%) hue-rotate(303deg)
+      brightness(106%) contrast(107%);
+  }
+}
+
+.removeButton:active,
+.checkButton:active {
+  svg {
+    filter: invert(76%) sepia(6%) saturate(1899%) hue-rotate(303deg)
+      brightness(101%) contrast(91%);
+  }
+}
+
+.resActions {
+  margin-left: auto;
+}
+
+main {
+  grid-area: main;
+}
+
+.formBox {
+  background-color: var(--box-clr);
+  padding: 2em;
+  border-radius: 1em;
+  box-shadow: 0px 0px 10px -3px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2em 0;
+
+  label {
+    padding: 0.8em 1em;
+  }
+
+  div {
+    display: flex;
+    flex-direction: row;
+    border-radius: 0.65em;
+    border: 1px solid lightgray;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
+
+.radioInput {
+  display: none;
+}
+
+#fname,
+#add {
+  width: 100%;
+  padding: 0.8em;
+  border: 1px solid lightgray;
+  border-radius: 0.65em;
+  font-size: medium;
+}
+
+#add {
+  background-color: var(--accent-clr);
+}
+
+#hardware:checked ~ #hardwareLabel,
+#software:checked ~ #softwareLabel,
+#highPrio:checked ~ #highLabel,
+#mediumPrio:checked ~ #mediumLabel,
+#lowPrio:checked ~ #lowLabel {
+  background-color: var(--accent-clr);
+}
+
+@media (max-width: 700px) {
+  html {
+    font-size: larger;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+  }
+
+  aside {
+    height: 100vh;
+    width: 100%;
+  }
+
+  .formBox {
+    display: none;
+    height: 100vh;
+    width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .phoneButton {
+    position: fixed;
+    bottom: 0;
+    border: 0px;
+    z-index: 10;
+    background-color: var(--accent-clr);
+    padding: 3em;
+    width: 100%;
+  }
+
+  main {
+    width: 100%;
+  }
+
+  form {
+    div {
+      border-radius: 0;
+    }
+  }
+
+  #fname,
+  #add {
+    border-radius: 0;
+  }
+}
+
+@media (min-width: 700px) {
+  .phoneButton {
+    display: none;
+  }
+}
