@@ -132,7 +132,10 @@ const saveResources = () => {
 };
 
 const loadResources = () => {
-  resourcesArray = JSON.parse(localStorage.getItem("ResourcesArray"));
+  if (localStorage.getItem("ResourcesArray") != null) {
+    resourcesArray = JSON.parse(localStorage.getItem("ResourcesArray"));
+  }
+
   updateResources();
 };
 
